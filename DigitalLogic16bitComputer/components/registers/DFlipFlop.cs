@@ -10,10 +10,10 @@ namespace DigitalLogic16bitComputer.components.registers
 
         public DFlipFlop(Bit inputD, Bit inputClk) {
             var notInputD = new NotGate(inputD);
-            var nand1 = new NandGate(inputD, inputClk);
-            var nand2 = new NandGate(notInputD.Output, inputClk);
+            var nand1 = new AndGate(inputD, inputClk);
+            var nand2 = new AndGate(notInputD.Output, inputClk);
             this.srLatch = new SRLatch(nand1.Output, nand2.Output);
-            this.Output = this.srLatch.OutputQPrime;
+            this.Output = this.srLatch.OutputQ;
         }
     }
 }
