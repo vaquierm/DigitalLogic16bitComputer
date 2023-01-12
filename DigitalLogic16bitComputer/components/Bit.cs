@@ -52,6 +52,7 @@ namespace DigitalLogic16bitComputer.components
         {
             this.connections.Remove(bit);
             bit.UnregisterUpdate(this);
+            this.Update();
         }
 
         public void Update()
