@@ -1,8 +1,7 @@
 ﻿using DigitalLogic16bitComputer.components;
-using DigitalLogic16bitComputer.components.gates;
 
 
-namespace DigitalLogic16bitComputerTest.gates
+namespace DigitalLogic16bitComputerTest.components
 {
     public class BitTest
     {
