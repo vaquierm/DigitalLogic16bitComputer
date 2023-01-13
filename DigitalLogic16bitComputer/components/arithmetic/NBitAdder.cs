@@ -4,9 +4,9 @@ namespace DigitalLogic16bitComputer.components.arithmetic
 {
     public class NBitAdder
     {
-        public NBitArray OutputNum;
-        public Bit OutputCarry;
-        public Bit OutputOverflow;
+        public NBitArray OutputNum { get; }
+        public Bit OutputCarry { get; }
+        public Bit OutputOverflow { get; }
         public NBitAdder(NBitArray numA, NBitArray numB, Bit inputCarry)
         {
             if (numA.Length != numB.Length)
