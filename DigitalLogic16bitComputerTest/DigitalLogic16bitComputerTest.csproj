@@ -20,4 +20,8 @@
     <ProjectReference Include="..\DigitalLogic16bitComputer\DigitalLogic16bitComputer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="util\" />
+  </ItemGroup>
+
 </Project>
