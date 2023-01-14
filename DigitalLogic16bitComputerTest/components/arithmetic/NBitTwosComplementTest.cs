@@ -17,6 +17,7 @@ namespace DigitalLogic16bitComputerTest.components.arithmetic
             Assert.That(nBitTwosComplement.OutputNum.ToInt(), Is.EqualTo(-number));
         }
 
+        [Test]
         public void Throws()
         {
             var bitArrayNumber = new NBitArray(new Bit[] { new Bit(true) });
