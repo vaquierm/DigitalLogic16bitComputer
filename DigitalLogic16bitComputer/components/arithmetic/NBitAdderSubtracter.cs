@@ -5,15 +5,11 @@ namespace DigitalLogic16bitComputer.components.arithmetic
     public class NBitAdderSubtracter
     {
         public Bit Subtract { get; }
-        public NBitArray NumA { get; }
-        public NBitArray NumB { get; }
 
         public NBitArray OutputNum { get; }
 
         public NBitAdderSubtracter(NBitArray numA, NBitArray numB, Bit subtract)
         {
-            this.NumA = numA;
-            this.NumB = numB;
             this.Subtract = subtract;
 
             if (numA.Length != numB.Length)
