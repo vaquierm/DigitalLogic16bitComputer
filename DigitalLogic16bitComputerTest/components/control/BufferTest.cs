@@ -1,5 +1,5 @@
 ﻿using DigitalLogic16bitComputer.components;
-using Buffer = DigitalLogic16bitComputer.components.Buffer;
+using Buffer = DigitalLogic16bitComputer.components.control.Buffer;
 
 namespace DigitalLogic16bitComputerTest.components
 {

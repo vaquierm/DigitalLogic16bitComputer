@@ -1,6 +1,6 @@
 ﻿using DigitalLogic16bitComputer.components.gates;
 
-namespace DigitalLogic16bitComputer.components
+namespace DigitalLogic16bitComputer.components.control
 {
     public class Multiplexer
     {

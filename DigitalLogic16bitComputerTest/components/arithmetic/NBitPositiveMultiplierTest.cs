@@ -3,7 +3,7 @@ using DigitalLogic16bitComputer.components.arithmetic;
 
 namespace DigitalLogic16bitComputerTest.components.arithmetic
 {
-    public class NBitMultiplierTest
+    public class NBitPositiveMultiplierTest
     {
         [TestCase(6, 3, 8)]
         [TestCase(13, 25, 16)]
@@ -14,7 +14,7 @@ namespace DigitalLogic16bitComputerTest.components.arithmetic
             var numABitArray = NBitArray.IntToNBitArray(numA, nBits);
             var numBBitArray = NBitArray.IntToNBitArray(numB, nBits);
 
-            var adderSubtracter = new NBitMultiplier(numABitArray, numBBitArray);
+            var adderSubtracter = new NBitPositiveMultiplier(numABitArray, numBBitArray);
 
             Assert.That(adderSubtracter.FullOutputNum.ToInt(), Is.EqualTo(numA * numB));
             Assert.That(adderSubtracter.OutputNum.ToInt(), Is.EqualTo(numA * numB));
@@ -30,7 +30,7 @@ namespace DigitalLogic16bitComputerTest.components.arithmetic
             var numABitArray = NBitArray.IntToNBitArray(numA, nBits);
             var numBBitArray = NBitArray.IntToNBitArray(numB, nBits);
 
-            var adderSubtracter = new NBitMultiplier(numABitArray, numBBitArray);
+            var adderSubtracter = new NBitPositiveMultiplier(numABitArray, numBBitArray);
 
             Assert.That(adderSubtracter.FullOutputNum.ToInt(), Is.EqualTo(numA * numB));
             Assert.That(adderSubtracter.OutputOverflow.Value, Is.EqualTo(true));

@@ -1,4 +1,5 @@
-﻿using DigitalLogic16bitComputer.components;
+﻿using DigitalLogic16bitComputer.components.control;
+using DigitalLogic16bitComputer.components;
 
 
 namespace DigitalLogic16bitComputerTest.components
