@@ -7,7 +7,7 @@ namespace DigitalLogic16bitComputerTest.components.control
     {
         [TestCase(new bool[] { false, true, false }, new bool[] { true, false, true })]
         [TestCase(new bool[] { true, true, true, false }, new bool[] { false, false, false, false })]
-        public void Test_NBitMultiplexer(bool[] inputA, bool[] inputB)
+        public void NBitMultiplexer(bool[] inputA, bool[] inputB)
         {
             var nBitInputA = new NBitArray(inputA.Select(x => new Bit(x)).ToArray());
             var nBitInputB = new NBitArray(inputB.Select(x => new Bit(x)).ToArray());

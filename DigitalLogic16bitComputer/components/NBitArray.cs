@@ -35,6 +35,11 @@ namespace DigitalLogic16bitComputer.components
             return this.bitArray.ToList().GetEnumerator();
         }
 
+        public override string ToString()
+        {
+            return this.ToInt().ToString();
+        }
+
         public int ToInt()
         {
             var binaryString = this.ToBinaryString();
