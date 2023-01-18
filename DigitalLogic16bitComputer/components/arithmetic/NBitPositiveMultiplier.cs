@@ -2,6 +2,9 @@
 
 namespace DigitalLogic16bitComputer.components.arithmetic
 {
+    /// <summary>
+    /// Represents a N-bit multiplier circuit for positive integers.
+    /// </summary>
     public class NBitPositiveMultiplier
     {
         public NBitArray OutputNum { get; }
@@ -61,6 +64,12 @@ namespace DigitalLogic16bitComputer.components.arithmetic
             this.OutputOverflow = overflowBitsOr.Output;
         }
 
+        /// <summary>
+        /// Perform bitwise AND operation on all bits of <paramref name="num"/> using <paramref name="bit"/>
+        /// </summary>
+        /// <param name="num">The NBitArray to perform the operation on</param>
+        /// <param name="bit">The Bit to compare with</param>
+        /// <returns>The NBitArray with the result of the operation</returns>
         private NBitArray AndAll(NBitArray num, Bit bit)
         {
             var outBits = new Bit[num.Length];
@@ -73,11 +82,22 @@ namespace DigitalLogic16bitComputer.components.arithmetic
             return new NBitArray(outBits);
         }
 
+        /// <summary>
+        /// Remove the last bit of <paramref name="num"/>
+        /// </summary>
+        /// <param name="num">The NBitArray to remove the last bit from</param>
+        /// <returns>The NBitArray with the last bit removed</returns>
         private NBitArray RemoveLastBit(NBitArray num)
         {
             return new NBitArray(num.Take(num.Length - 1).ToArray());
         }
 
+        /// <summary>
+        /// Create a new NBitArray by concatenating <paramref name="bit"/> at the beginning of <paramref name="num"/>
+        /// </summary>
+        /// <param name="num">The NBitArray to append to</param>
+        /// <param name="bit">The Bit to append</param>
+        /// <returns>The new NBitArray</returns>
         private NBitArray ConcatFirst(NBitArray num, Bit bit)
         {
             return new NBitArray(num.Prepend(bit).ToArray());

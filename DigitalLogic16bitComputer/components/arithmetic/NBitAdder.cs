@@ -2,11 +2,35 @@
 
 namespace DigitalLogic16bitComputer.components.arithmetic
 {
+    /// <summary>
+    /// A class that represents a N-Bit Adder, which takes in two N-bit numbers and an input carry
+    /// and outputs the sum of the two numbers, the carry out, and the overflow bit.
+    /// </summary>
     public class NBitAdder
     {
+        /// <summary>
+        /// The resulting sum of the two input numbers, in the form of an <see cref="NBitArray"/>
+        /// </summary>
+        /// 
         public NBitArray OutputNum { get; }
+
+        /// <summary>
+        /// The carry out bit of the addition, indicating whether a carry occurred from the most significant bit
+        /// </summary>
         public Bit OutputCarry { get; }
+
+        /// <summary>
+        /// The overflow bit of the addition, indicating whether an overflow occurred from the addition
+        /// </summary>
         public Bit OutputOverflow { get; }
+
+        /// <summary>
+        /// Constructs an NBitAdder, which takes in two N-bit numbers and an input carry
+        /// and outputs the sum of the two numbers, the carry out, and the overflow bit.
+        /// </summary>
+        /// <param name="numA">The first N-bit number to be added</param>
+        /// <param name="numB">The second N-bit number to be added</param>
+        /// <param name="inputCarry">The input carry bit, indicating whether a carry is being propagated from a previous addition</param>
         public NBitAdder(NBitArray numA, NBitArray numB, Bit inputCarry)
         {
             if (numA.Length != numB.Length)

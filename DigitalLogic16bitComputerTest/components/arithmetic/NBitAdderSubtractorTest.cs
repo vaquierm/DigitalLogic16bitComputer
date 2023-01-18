@@ -3,7 +3,7 @@ using DigitalLogic16bitComputer.components;
 
 namespace DigitalLogic16bitComputerTest.components.arithmetic
 {
-    public class NBitAdderSubtracterTest
+    public class NBitAdderSubtractorTest
     {
         [TestCase(5, 14, 10)]
         [TestCase(5, -14, 10)]
@@ -14,7 +14,7 @@ namespace DigitalLogic16bitComputerTest.components.arithmetic
             var numABitArray = NBitArray.IntToNBitArray(numA, nBits);
             var numBBitArray = NBitArray.IntToNBitArray(numB, nBits);
 
-            var adderSubtracter = new NBitAdderSubtracter(numABitArray, numBBitArray, new Bit(false));
+            var adderSubtracter = new NBitAdderSubtractor(numABitArray, numBBitArray, new Bit(false));
 
             Assert.That(adderSubtracter.OutputNum.ToInt(), Is.EqualTo(numA + numB));
         }
@@ -28,7 +28,7 @@ namespace DigitalLogic16bitComputerTest.components.arithmetic
             var numABitArray = NBitArray.IntToNBitArray(numA, nBits);
             var numBBitArray = NBitArray.IntToNBitArray(numB, nBits);
 
-            var adderSubtracter = new NBitAdderSubtracter(numABitArray, numBBitArray, new Bit(true));
+            var adderSubtracter = new NBitAdderSubtractor(numABitArray, numBBitArray, new Bit(true));
 
             Assert.That(adderSubtracter.OutputNum.ToInt(), Is.EqualTo(numA - numB));
         }

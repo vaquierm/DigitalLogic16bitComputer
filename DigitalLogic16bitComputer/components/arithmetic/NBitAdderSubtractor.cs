@@ -2,13 +2,25 @@
 
 namespace DigitalLogic16bitComputer.components.arithmetic
 {
-    public class NBitAdderSubtracter
+    /// <summary>
+    /// Represents a N-bit adder-subtractor circuit.
+    /// </summary>
+    public class NBitAdderSubtractor
     {
+        /// <summary>
+        /// Indicates whether the circuit is in subtraction mode.
+        /// </summary>
         public Bit Subtract { get; }
 
+        /// <summary>
+        /// The N-bit output of the circuit.
+        /// </summary>
         public NBitArray OutputNum { get; }
 
-        public NBitAdderSubtracter(NBitArray numA, NBitArray numB, Bit subtract)
+        /// <param name="numA">The first N-bit number to be added or subtracted.</param>
+        /// <param name="numB">The second N-bit number to be added or subtracted.</param>
+        /// <param name="subtract">A bit that determines whether the operation is addition or subtraction.</param>
+        public NBitAdderSubtractor(NBitArray numA, NBitArray numB, Bit subtract)
         {
             this.Subtract = subtract;
 

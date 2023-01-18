@@ -1,0 +1,599 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalLogic16bitComputer</name>
+    </assembly>
+    <members>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.FullAdder">
+            <summary>
+            A full adder is a digital circuit that performs the arithmetic operation of addition, specifically, 
+            the addition of two binary digits and a carry. 
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.FullAdder.InputA">
+            <summary>
+            First input bit to be added
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.FullAdder.InputB">
+            <summary>
+            Second input bit to be added
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.FullAdder.InputCarry">
+            <summary>
+            Carry input from a previous addition
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.FullAdder.Output">
+            <summary>
+            Output of the addition of the three input bits
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.FullAdder.OutputCarry">
+            <summary>
+            Carry output for the next addition
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.FullAdder.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Constructs a FullAdder object with input bits and carry. 
+            </summary>
+            <param name="inputA">First input bit to be added</param>
+            <param name="inputB">Second input bit to be added</param>
+            <param name="inputCarry">Carry input from a previous addition</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitAdder">
+            <summary>
+            A class that represents a N-Bit Adder, which takes in two N-bit numbers and an input carry
+            and outputs the sum of the two numbers, the carry out, and the overflow bit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitAdder.OutputNum">
+            <summary>
+            The resulting sum of the two input numbers, in the form of an <see cref="T:DigitalLogic16bitComputer.components.NBitArray"/>
+            </summary>
+            
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitAdder.OutputCarry">
+            <summary>
+            The carry out bit of the addition, indicating whether a carry occurred from the most significant bit
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitAdder.OutputOverflow">
+            <summary>
+            The overflow bit of the addition, indicating whether an overflow occurred from the addition
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitAdder.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Constructs an NBitAdder, which takes in two N-bit numbers and an input carry
+            and outputs the sum of the two numbers, the carry out, and the overflow bit.
+            </summary>
+            <param name="numA">The first N-bit number to be added</param>
+            <param name="numB">The second N-bit number to be added</param>
+            <param name="inputCarry">The input carry bit, indicating whether a carry is being propagated from a previous addition</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitAdderSubtractor">
+            <summary>
+            Represents a N-bit adder-subtractor circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitAdderSubtractor.Subtract">
+            <summary>
+            Indicates whether the circuit is in subtraction mode.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitAdderSubtractor.OutputNum">
+            <summary>
+            The N-bit output of the circuit.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitAdderSubtractor.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)">
+            <param name="numA">The first N-bit number to be added or subtracted.</param>
+            <param name="numB">The second N-bit number to be added or subtracted.</param>
+            <param name="subtract">A bit that determines whether the operation is addition or subtraction.</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier">
+            <summary>
+            Multiplication module for two N-bit integers.
+            </summary>
+            <param name="numA">Number A</param>
+            <param name="numB">Number B</param>
+            <exception cref="T:System.ArgumentException">Both numbers must have at least 3 bits each and be of the same length</exception>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier.OutputNum">
+            <summary>
+            The N first bits of the resulting product of the multiplication in 2's complement representation.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier.FullOutputNum">
+            <summary>
+            The resulting product of the multiplication in full 2's complement representation.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier.OutputOverflow">
+            <summary>
+            The overflow bit indicating if the result of the multiplication exceeds the range of an N-bit number.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Multiplication module for two N-bit integers. 
+            </summary>
+            <param name="numA">Number A</param>
+            <param name="numB">Number B</param>
+            <exception cref="T:System.ArgumentException">Both numbers must have at least 3 bits each and be of the same length</exception>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier">
+            <summary>
+            Represents a N-bit multiplier circuit for positive integers.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Multiplication module for two N-bit POSITIVE integers. This module does not work if negative numbers are passed
+            </summary>
+            <param name="numA">Number A</param>
+            <param name="numB">Number B</param>
+            <exception cref="T:System.ArgumentException">Both numbers must have at least 3 bits each and be of the same length</exception>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.AndAll(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Perform bitwise AND operation on all bits of <paramref name="num"/> using <paramref name="bit"/>
+            </summary>
+            <param name="num">The NBitArray to perform the operation on</param>
+            <param name="bit">The Bit to compare with</param>
+            <returns>The NBitArray with the result of the operation</returns>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.RemoveLastBit(DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Remove the last bit of <paramref name="num"/>
+            </summary>
+            <param name="num">The NBitArray to remove the last bit from</param>
+            <returns>The NBitArray with the last bit removed</returns>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.ConcatFirst(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Create a new NBitArray by concatenating <paramref name="bit"/> at the beginning of <paramref name="num"/>
+            </summary>
+            <param name="num">The NBitArray to append to</param>
+            <param name="bit">The Bit to append</param>
+            <returns>The new NBitArray</returns>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement">
+            <summary>
+            Class for creating the two's complement representation of a number.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement.OutputNum">
+            <summary>
+            The two's complement of the input number
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement.#ctor(DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Creates a new instance of the class.
+            </summary>
+            <param name="number">The input number to convert to two's complement</param>
+            <exception cref="T:System.ArgumentException">Thrown when the number of bits in the input number is less than 2</exception>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.Bit">
+            <summary>
+            Represents a single bit in a digital logic circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.Bit.Value">
+            <summary>
+            Gets or sets the value of the bit (either true or false)
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.Bit.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the Bit class with an optional initial value
+            </summary>
+            <param name="value">The initial value of the bit (default is false)</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.Bit.RegisterUpdate(DigitalLogic16bitComputer.components.IUpdatable)">
+            <summary>
+            Registers a component to be updated when the value of this bit changes
+            </summary>
+            <param name="component">The component to be updated</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.Bit.UnregisterUpdate(DigitalLogic16bitComputer.components.IUpdatable)">
+            <summary>
+            Unregisters a component from being updated when the value of this bit changes
+            </summary>
+            <param name="component">The component to be removed</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.Bit.ConnectFrom(DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Connects this bit to another bit
+            </summary>
+            <param name="bit">The bit to be connected to</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.Bit.DisconnectFrom(DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Disconnects this bit from another bit
+            </summary>
+            <param name="bit">The bit to be disconnected from</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.Bit.Update">
+            <summary>
+            Updates the value of this bit based on its connections
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.Bit.Dispose">
+            <summary>
+            Disposes of this bit and its connections
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.Bit.ToString">
+            <summary>
+            Converts the value of this bit to a string representation
+            </summary>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.gates.AndGate">
+            <summary>
+            Represents an AND gate in a digital logic circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.AndGate.InputA">
+            <summary>
+            The first input bit for the AND gate
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.AndGate.InputB">
+            <summary>
+            The second input bit for the AND gate
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.AndGate.Output">
+            <summary>
+            The output bit for the AND gate
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.AndGate.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the AndGate class with two input bits
+            </summary>
+            <param name="inputA">The first input bit</param>
+            <param name="inputB">The second input bit</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.AndGate.#ctor(DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the AndGate class with an array of input bits
+            </summary>
+            <param name="inputs">An array of input bits</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.AndGate.InitializeInputs(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes the inputs and output of the AND gate
+            </summary>
+            <param name="inputA">The first input</param>
+            <param name="inputB">The second input</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.AndGate.Update">
+            <summary>
+            Updates the output of the AND gate based on the inputs
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.AndGate.Dispose">
+            <summary>
+            Unregisters the update for the inputs
+            </summary>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.gates.NandGate">
+            <summary>
+            A logical NAND gate implementation
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.NandGate.Output">
+            <summary>
+            The output of the NAND gate
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.NandGate.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the NandGate class with two input bits
+            </summary>
+            <param name="inputA">The first input bit</param>
+            <param name="inputB">The second input bit</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.NandGate.#ctor(DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the NandGate class with an NBitArray of inputs
+            </summary>
+            <param name="inputs">The NBitArray of inputs</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.gates.NorGate">
+            <summary>
+            A logical NOR gate implementation
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.NorGate.Output">
+            <summary>
+            The output of the Nor gate
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.NorGate.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the NorGate class with two input bits
+            </summary>
+            <param name="inputA">The first input bit</param>
+            <param name="inputB">The second input bit</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.NorGate.#ctor(DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the NorGate class with an NBitArray of inputs
+            </summary>
+            <param name="inputs">The NBitArray of inputs</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.gates.NotGate">
+            <summary>
+            Represents a NOT gate in a digital logic circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.NotGate.Input">
+            <summary>
+            The input bit for the NOT gate
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.NotGate.Output">
+            <summary>
+            The output bit for the NOT gate
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.NotGate.#ctor(DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the NotGate class
+            </summary>
+            <param name="input">The input bit for the NOT gate</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.NotGate.Update">
+            <summary>
+            Updates the output bit based on the input bit
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.NotGate.Dispose">
+            <summary>
+            Unregisters the component from the input bit
+            </summary>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.gates.OrGate">
+            <summary>
+            Represents an OR gate in a digital logic circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.OrGate.InputA">
+            <summary>
+            The first input bit for the OR gate
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.OrGate.InputB">
+            <summary>
+            The second input bit for the OR gate
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.OrGate.Output">
+            <summary>
+            The output bit for the OR gate
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.OrGate.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the OrGate class with two input bits
+            </summary>
+            <param name="inputA">The first input bit for the OR gate</param>
+            <param name="inputB">The second input bit for the OR gate</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.OrGate.#ctor(DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the OrGate class with N input bits
+            </summary>
+            <param name="inputs">The input bits for the OR gate</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.OrGate.InitializeInputs(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes the inputs and output of the OR gate
+            </summary>
+            <param name="inputA">The first input</param>
+            <param name="inputB">The second input</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.OrGate.Update">
+            <summary>
+            Updates the output of the AND gate based on the inputs
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.OrGate.Dispose">
+            <summary>
+            Unregisters the update for the inputs
+            </summary>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.gates.XorGate">
+            <summary>
+            A XOR gate implementation
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.gates.XorGate.Output">
+            <summary>
+            Output bit of the XOR gate
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.gates.XorGate.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.gates.XorGate"/> class.
+            </summary>
+            <param name="inputA">First input for the XOR gate</param>
+            <param name="inputB">Second input for the XOR gate</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.IUpdatable">
+            <summary>
+            Interface for updatable components
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.IUpdatable.Update">
+            <summary>
+            Update the component's state
+            </summary>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.NBitArray">
+            <summary>
+            Wrapper for an array of bits with a few utility functions
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.NBitArray.Length">
+            <summary>
+            The number of bits in the array
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.#ctor(DigitalLogic16bitComputer.components.Bit[])">
+            <summary>
+            Initializes a new instance of the NBitArray class with a given array of bits
+            </summary>
+            <param name="bitArray">The array of bits to be wrapped</param>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.NBitArray.Item(System.Int32)">
+            <summary>
+            Indexer for accessing individual bits in the array
+            </summary>
+            <param name="i">The index of the desired bit</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets an enumerator for the bits in the array
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.GetEnumerator">
+            <summary>
+            Gets an enumerator for the bits in the array
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.ToString">
+            <summary>
+            Converts the bit array to a string representation
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.ToInt">
+            <summary>
+            Converts the bit array to an integer
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.ToBinaryString">
+            <summary>
+            Converts the bit array to a binary string
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.IntToNBitArray(System.Int32,System.Int32)">
+            <summary>
+            Converts an integer to a NBitArray
+            </summary>
+            <param name="value">The integer to be converted</param>
+            <param name="nBits">The number of bits in the resulting NBitArray</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.BinaryStringToNBitArray(System.String)">
+            <summary>
+            Converts a binary string to a NBitArray
+            </summary>
+            <param name="binaryString">The binary string to be converted</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.registers.DFlipFlop">
+            <summary>
+            A D Flip-Flop is a type of bistable latch that has two stable states, one of which is the set state and the other is the reset state.
+            The output of the flip-flop is the stored state which can be set or reset by the input D and the input Clock.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.DFlipFlop.Output">
+            <summary>
+            The output of the D Flip-Flop. This is the stored state.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.registers.DFlipFlop.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Constructs a D Flip-Flop with input D and input Clock
+            </summary>
+            <param name="inputD">The input to set or reset the stored state</param>
+            <param name="inputClk">The input to control when to set or reset the stored state</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.registers.Register">
+            <summary>
+            A class that represents a register that stores a single bit.
+            </summary>
+        </member>
+        <member name="F:DigitalLogic16bitComputer.components.registers.Register.inputFlipFlop">
+            <summary>
+            A D-flip-flop that serves as the input for the register.
+            </summary>
+        </member>
+        <member name="F:DigitalLogic16bitComputer.components.registers.Register.outputFlipFlop">
+            <summary>
+            A D-flip-flop that serves as the output for the register.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.Register.Input">
+            <summary>
+            The input bit for the register.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.Register.Output">
+            <summary>
+            The output bit for the register.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.registers.Register.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.registers.Register"/> class.
+            </summary>
+            <param name="input">The input bit for the register.</param>
+            <param name="clk">The clock input for the register.</param>
+            <param name="enable">The enable input for the register.</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.registers.SRLatch">
+            <summary>
+            SR Latch is a fundamental building block of many sequential logic circuits.
+            It is a bistable circuit that has two stable states, and can be used to store a bit of information.
+            The circuit has two inputs, S (set) and R (reset), and two outputs, Q and Q' (Q prime).
+            When S is true and R is false, the circuit's output will be Q = 1, Q' = 0.
+            When S is false and R is true, the circuit's output will be Q = 0, Q' = 1.
+            If both S and R are true, the circuit is in an invalid state.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.SRLatch.InputS">
+            <summary>
+            The S input
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.SRLatch.InputR">
+            <summary>
+            The R input
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.SRLatch.OutputQ">
+            <summary>
+            The Q output
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.SRLatch.OutputQPrime">
+            <summary>
+            The Q' output
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.registers.SRLatch.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new SR Latch with the provided input S and input R
+            </summary>
+            <param name="inputS">The S input</param>
+            <param name="inputR">The R input</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.registers.SRLatch.Update">
+            <summary>
+            Updates the circuit's output based on the inputs
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.registers.SRLatch.Dispose">
+            <summary>
+            Disposes of the SR Latch
+            </summary>
+        </member>
+    </members>
+</doc>
