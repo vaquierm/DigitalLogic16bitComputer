@@ -94,6 +94,32 @@
             <param name="numB">The second N-bit number to be added or subtracted.</param>
             <param name="subtract">A bit that determines whether the operation is addition or subtraction.</param>
         </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitDivider">
+            <summary>
+            Division module for two N-bit integers.
+            </summary>
+            <param name="numA">Number A</param>
+            <param name="numB">Number B</param>
+            <exception cref="T:System.ArgumentException">Both numbers must have at least 3 bits each and be of the same length</exception>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitDivider.OutputNum">
+            <summary>
+            The result of the devision.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitDivider.OutputRemainder">
+            <summary>
+            The remainder of the division.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitDivider.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Division module for two N-bit integers. 
+            </summary>
+            <param name="numA">Number A</param>
+            <param name="numB">Number B</param>
+            <exception cref="T:System.ArgumentException">Both numbers must have at least 3 bits each and be of the same length</exception>
+        </member>
         <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier">
             <summary>
             Multiplication module for two N-bit integers.
@@ -125,9 +151,42 @@
             <param name="numB">Number B</param>
             <exception cref="T:System.ArgumentException">Both numbers must have at least 3 bits each and be of the same length</exception>
         </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveDivider.OutputNum">
+            <summary>
+            The result of the devision.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveDivider.OutputRemainder">
+            <summary>
+            The remainder of the division.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveDivider.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Division module for two N-bit POSITIVE integers. This module does not work if negative numbers are passed
+            </summary>
+            <param name="numA">Number A</param>
+            <param name="numB">Number B</param>
+            <exception cref="T:System.ArgumentException">Both numbers must have at least 3 bits each and be of the same length</exception>
+        </member>
         <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier">
             <summary>
             Represents a N-bit multiplier circuit for positive integers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.OutputNum">
+            <summary>
+            The N first bits of the resulting product of the multiplication in 2's complement representation.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.FullOutputNum">
+            <summary>
+            The resulting product of the multiplication in full 2's complement representation.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.OutputOverflow">
+            <summary>
+            Represents the overflow bit of the multiplication operation. 
             </summary>
         </member>
         <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
@@ -483,6 +542,14 @@
             <summary>
             Converts the bit array to a binary string
             </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.NBitArray.SubArray(System.Int32,System.Int32)">
+            <summary>
+            Creates a sub array of this NBitArray
+            </summary>
+            <param name="startIndex">The first bit index to be included</param>
+            <param name="endIndex">The last bit index to be included</param>
+            <returns>A sub array of this NBitArray</returns>
         </member>
         <member name="M:DigitalLogic16bitComputer.components.NBitArray.IntToNBitArray(System.Int32,System.Int32)">
             <summary>

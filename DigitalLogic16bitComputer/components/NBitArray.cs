@@ -91,6 +91,44 @@ namespace DigitalLogic16bitComputer.components
         }
 
         /// <summary>
+        /// Creates a sub array of this NBitArray
+        /// </summary>
+        /// <param name="startIndex">The first bit index to be included</param>
+        /// <param name="endIndex">The last bit index to be included</param>
+        /// <returns>A sub array of this NBitArray</returns>
+        public NBitArray SubArray(int startIndex, int endIndex)
+        {
+            var outputSubArray = new Bit[endIndex - startIndex + 1];
+            for (var i = startIndex; i <= endIndex; i++)
+            {
+                outputSubArray[i - startIndex] = this[i];
+            }
+
+            return new NBitArray(outputSubArray);
+        }
+
+        public NBitArray Append(Bit bit, int num = 1)
+        {
+            var outputArray = this.ToList();
+            for (var i = 0; i < num; i++)
+            {
+                outputArray.Add(bit);
+            }
+            return new NBitArray(outputArray.ToArray());
+        }
+
+
+        public NBitArray Prepend(Bit bit, int num = 1)
+        {
+            var outputArray = this.ToList();
+            for (var i = 0; i < num; i++)
+            {
+                outputArray = outputArray.Prepend(bit).ToList();
+            }
+            return new NBitArray(outputArray.ToArray());
+        }
+
+        /// <summary>
         /// Converts an integer to a NBitArray
         /// </summary>
         /// <param name="value">The integer to be converted</param>

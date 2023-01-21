@@ -7,11 +7,21 @@ namespace DigitalLogic16bitComputer.components.arithmetic
     /// </summary>
     public class NBitPositiveMultiplier
     {
+        /// <summary>
+        /// The N first bits of the resulting product of the multiplication in 2's complement representation.
+        /// </summary>
         public NBitArray OutputNum { get; }
 
+        /// <summary>
+        /// The resulting product of the multiplication in full 2's complement representation.
+        /// </summary>
         public NBitArray FullOutputNum { get; }
 
+        /// <summary>
+        /// Represents the overflow bit of the multiplication operation. 
+        /// </summary>
         public Bit OutputOverflow { get; }
+
 
         /// <summary>
         /// Multiplication module for two N-bit POSITIVE integers. This module does not work if negative numbers are passed
