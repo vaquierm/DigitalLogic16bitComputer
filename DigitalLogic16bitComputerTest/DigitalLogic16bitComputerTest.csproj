@@ -22,6 +22,10 @@
 
   <ItemGroup>
     <Folder Include="util\" />
+    <Folder Include="components\arithmetic\logic\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="components\arithmetic\logic\" />
+  </ItemGroup>
 </Project>

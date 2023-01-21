@@ -43,6 +43,109 @@
             <param name="inputB">Second input bit to be added</param>
             <param name="inputCarry">Carry input from a previous addition</param>
         </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseAnd">
+            <summary>
+            Represents a N-bit bitwise AND circuit for positive integers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseAnd.OutputNum">
+            <summary>
+            The result of the bitwise AND operation.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseAnd.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Performs a bitwise AND operation on two N-bit arrays of positive integers.
+            </summary>
+            <param name="numA">The first N-bit array of positive integers</param>
+            <param name="numB">The second N-bit array of positive integers</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNand">
+            <summary>
+            Represents a N-bit bitwise NAND circuit for two N-bit arrays of integers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNand.OutputNum">
+            <summary>
+            The output of the bitwise NAND operation.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNand.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNand"/> class.
+            Performs a bitwise NAND operation on two N-bit arrays.
+            </summary>
+            <param name="numA">The first N-bit array to perform the operation on.</param>
+            <param name="numB">The second N-bit array to perform the operation on.</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNor">
+            <summary>
+            Represents a N-bit bitwise NOR circuit for two N-bit arrays of integers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNor.OutputNum">
+            <summary>
+            The output of the bitwise NOR operation.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNor.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNor"/> class.
+            Performs a bitwise NOR operation on two N-bit arrays.
+            </summary>
+            <param name="numA">The first N-bit array to perform the operation on.</param>
+            <param name="numB">The second N-bit array to perform the operation on.</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNot">
+            <summary>
+            Represents a N-bit bitwise NOT circuit for positive integers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNot.OutputNum">
+            <summary>
+            The output of the bitwise NOT operation.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNot.#ctor(DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNot"/> class.
+            </summary>
+            <param name="num">The N-bit input number.</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseOr">
+            <summary>
+            Represents a N-bit bitwise OR circuit for positive integers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseOr.OutputNum">
+            <summary>
+            The output of the bitwise OR operation.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseOr.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Creates a new N-bit bitwise OR circuit for two positive integers.
+            </summary>
+            <param name="numA">The first number.</param>
+            <param name="numB">The second number.</param>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor">
+            <summary>
+            Represents a bitwise binary XOR operation on two N-bit numbers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor.OutputNum">
+            <summary>
+            The output of the bitwise XOR operation.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor"/> class.
+            </summary>
+            <param name="numA">The first N-bit number.</param>
+            <param name="numB">The second N-bit number.</param>
+        </member>
         <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitAdder">
             <summary>
             A class that represents a N-Bit Adder, which takes in two N-bit numbers and an input carry

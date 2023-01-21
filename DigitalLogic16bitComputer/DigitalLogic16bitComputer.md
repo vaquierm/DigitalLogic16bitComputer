@@ -55,6 +55,24 @@
   - [ToBinaryString()](#M-DigitalLogic16bitComputer-components-NBitArray-ToBinaryString 'DigitalLogic16bitComputer.components.NBitArray.ToBinaryString')
   - [ToInt()](#M-DigitalLogic16bitComputer-components-NBitArray-ToInt 'DigitalLogic16bitComputer.components.NBitArray.ToInt')
   - [ToString()](#M-DigitalLogic16bitComputer-components-NBitArray-ToString 'DigitalLogic16bitComputer.components.NBitArray.ToString')
+- [NBitBitwiseAnd](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseAnd 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseAnd')
+  - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseAnd-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseAnd.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseAnd-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseAnd.OutputNum')
+- [NBitBitwiseNand](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNand 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNand')
+  - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNand-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNand.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNand-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNand.OutputNum')
+- [NBitBitwiseNor](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNor 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNor')
+  - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNor-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNor.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNor-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNor.OutputNum')
+- [NBitBitwiseNot](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNot 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNot')
+  - [#ctor(num)](#M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNot-#ctor-DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNot.#ctor(DigitalLogic16bitComputer.components.NBitArray)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNot-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNot.OutputNum')
+- [NBitBitwiseOr](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseOr 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseOr')
+  - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseOr-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseOr.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseOr-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseOr.OutputNum')
+- [NBitBitwiseXor](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor')
+  - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor.OutputNum')
 - [NBitDivider](#T-DigitalLogic16bitComputer-components-arithmetic-NBitDivider 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider')
   - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitDivider-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-NBitDivider-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider.OutputNum')
@@ -676,6 +694,199 @@ Converts the bit array to a string representation
 ##### Parameters
 
 This method has no parameters.
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseAnd'></a>
+## NBitBitwiseAnd `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.logic
+
+##### Summary
+
+Represents a N-bit bitwise AND circuit for positive integers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseAnd-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(numA,numB) `constructor`
+
+##### Summary
+
+Performs a bitwise AND operation on two N-bit arrays of positive integers.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| numA | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The first N-bit array of positive integers |
+| numB | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The second N-bit array of positive integers |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseAnd-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The result of the bitwise AND operation.
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNand'></a>
+## NBitBitwiseNand `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.logic
+
+##### Summary
+
+Represents a N-bit bitwise NAND circuit for two N-bit arrays of integers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNand-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(numA,numB) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitBitwiseNand](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNand 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNand') class.
+Performs a bitwise NAND operation on two N-bit arrays.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| numA | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The first N-bit array to perform the operation on. |
+| numB | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The second N-bit array to perform the operation on. |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNand-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The output of the bitwise NAND operation.
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNor'></a>
+## NBitBitwiseNor `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.logic
+
+##### Summary
+
+Represents a N-bit bitwise NOR circuit for two N-bit arrays of integers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNor-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(numA,numB) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitBitwiseNor](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNor 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNor') class.
+Performs a bitwise NOR operation on two N-bit arrays.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| numA | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The first N-bit array to perform the operation on. |
+| numB | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The second N-bit array to perform the operation on. |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNor-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The output of the bitwise NOR operation.
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNot'></a>
+## NBitBitwiseNot `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.logic
+
+##### Summary
+
+Represents a N-bit bitwise NOT circuit for positive integers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNot-#ctor-DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(num) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitBitwiseNot](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNot 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseNot') class.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| num | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The N-bit input number. |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseNot-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The output of the bitwise NOT operation.
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseOr'></a>
+## NBitBitwiseOr `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.logic
+
+##### Summary
+
+Represents a N-bit bitwise OR circuit for positive integers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseOr-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(numA,numB) `constructor`
+
+##### Summary
+
+Creates a new N-bit bitwise OR circuit for two positive integers.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| numA | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The first number. |
+| numB | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The second number. |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseOr-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The output of the bitwise OR operation.
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor'></a>
+## NBitBitwiseXor `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.logic
+
+##### Summary
+
+Represents a bitwise binary XOR operation on two N-bit numbers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(numA,numB) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitBitwiseXor](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor') class.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| numA | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The first N-bit number. |
+| numB | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The second N-bit number. |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The output of the bitwise XOR operation.
 
 <a name='T-DigitalLogic16bitComputer-components-arithmetic-NBitDivider'></a>
 ## NBitDivider `type`
