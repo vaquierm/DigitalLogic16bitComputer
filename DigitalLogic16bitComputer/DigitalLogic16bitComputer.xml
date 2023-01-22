@@ -340,6 +340,25 @@
             <param name="number">The input number to convert to two's complement</param>
             <exception cref="T:System.ArgumentException">Thrown when the number of bits in the input number is less than 2</exception>
         </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift">
+            <summary>
+            Represents a N-bit right shift circuit for positive integers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.OutputNum">
+            <summary>
+            The output number after the right shift operation.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray})">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift"/> class.
+            </summary>
+            <param name="num">The number to shift</param>
+            <param name="shiftN">The number of bits to shift by</param>
+            <param name="shiftedOutBitsToShiftedInBitsDelegate">A delegate that converts the shifted out bits to the shifted in bits</param>
+            <exception cref="T:System.ArgumentException">The input num must have a number of bits that is a power of 2</exception>
+        </member>
         <member name="T:DigitalLogic16bitComputer.components.Bit">
             <summary>
             Represents a single bit in a digital logic circuit.
@@ -394,6 +413,125 @@
             <summary>
             Converts the value of this bit to a string representation
             </summary>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.control.Buffer">
+            <summary>
+            Represents a buffer circuit that connects the input to the output when the enable signal is high.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.control.Buffer.Output">
+            <summary>
+            The output of the buffer circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.control.Buffer.Input">
+            <summary>
+            The input to the buffer circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.control.Buffer.Enable">
+            <summary>
+            The enable signal for the buffer circuit.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.Buffer.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.control.Buffer"/> class.
+            </summary>
+            <param name="input">The input to the buffer circuit.</param>
+            <param name="output">The output of the buffer circuit.</param>
+            <param name="enable">The enable signal for the buffer circuit.</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.Buffer.Update">
+            <summary>
+            Updates the buffer circuit based on the current state of the enable signal.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.Buffer.Dispose">
+            <summary>
+            Disposes of the buffer circuit by unregistering the update method from the enable signal.
+            </summary>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.control.Multiplexer">
+            <summary>
+            A Multiplexer (MUX) is a combinational logic circuit that selects one of several inputs and forwards it to the output.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.control.Multiplexer.Output">
+            <summary>
+            The output of the multiplexer.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.Multiplexer.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Creates a new 2:1 multiplexer with the specified inputs and select bit.
+            </summary>
+            <param name="inputA">The first input bit</param>
+            <param name="inputB">The second input bit</param>
+            <param name="select">The select bit</param>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.Multiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Creates a new N:1 multiplexer with the specified inputs and select bits.
+            </summary>
+            <param name="inputs">The input bits</param>
+            <param name="selectBits">The select bits</param>
+            <exception cref="T:System.ArgumentException">If the number of inputs is not a power of 2 or if the number of select bits is not equal to log2(inputs.Length)</exception>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.control.NBitBuffer">
+            <summary>
+            Represents a N-bit buffer circuit that connects or disconnects a N-bit input to a N-bit output based on the value of the enable bit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.control.NBitBuffer.NBitOutput">
+            <summary>
+            The N-bit output of the buffer circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.control.NBitBuffer.NBitInput">
+            <summary>
+            The N-bit input of the buffer circuit.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.control.NBitBuffer.Enable">
+            <summary>
+            The enable bit that controls whether the input is connected to the output or not.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.NBitBuffer.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Creates a N-bit buffer circuit that connects or disconnects a N-bit input to a N-bit output based on the value of the enable bit.
+            </summary>
+            <param name="nBitInput">The N-bit input of the buffer circuit.</param>
+            <param name="nBitOutput">The N-bit output of the buffer circuit.</param>
+            <param name="enable">The enable bit that controls whether the input is connected to the output or not.</param>
+            <exception cref="T:System.ArgumentException">Input and Output must have the same length</exception>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.control.NBitMultiplexer">
+            <summary>
+            Represents a multiplexer that selects one of multiple N-bit inputs based on a selection bit or N-bit select signal.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.control.NBitMultiplexer.NBitOutput">
+            <summary>
+            The output of the multiplexer, an N-bit array.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.NBitMultiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.control.NBitMultiplexer"/> class that selects between two N-bit inputs based on a selection bit.
+            </summary>
+            <param name="nBitInputA">The first N-bit input to be selected.</param>
+            <param name="nBitInputB">The second N-bit input to be selected.</param>
+            <param name="select">The selection bit, where a value of 1 selects <paramref name="nBitInputA"/> and a value of 0 selects <paramref name="nBitInputB"/>.</param>
+            <exception cref="T:System.ArgumentException">Inputs must have the same length</exception>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.NBitMultiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray[],DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.control.NBitMultiplexer"/> class that selects between multiple N-bit inputs based on an N-bit select signal.
+            </summary>
+            <param name="inputArrays">The array of N-bit inputs to be selected from.</param>
+            <param name="selectBits">The N-bit selection</param>
         </member>
         <member name="T:DigitalLogic16bitComputer.components.gates.AndGate">
             <summary>

@@ -45,16 +45,16 @@ namespace DigitalLogic16bitComputer.components.arithmetic
             twosComplement = new NBitTwosComplement(numB);
             var inputBNegative = twosComplement.OutputNum;
 
-            var inputAMultiplexer = new NBitMultiplexer(inputANegative, numA, inputASign);
-            var inputBMultiplexer = new NBitMultiplexer(inputBNegative, numB, inputBSign);
+            var inputAMultiplexer = new NBitMultiplexer(numA, inputANegative, inputASign);
+            var inputBMultiplexer = new NBitMultiplexer(numB, inputBNegative, inputBSign);
 
             var positiveDivider = new NBitPositiveDivider(inputAMultiplexer.NBitOutput, inputBMultiplexer.NBitOutput);
 
             var resultSign = new XorGate(inputASign, inputBSign).Output;
             var resultTwosComplement = new NBitTwosComplement(positiveDivider.OutputNum);
             var remainderTwosComplement = new NBitTwosComplement(positiveDivider.OutputRemainder);
-            var outputMultiplexer = new NBitMultiplexer(resultTwosComplement.OutputNum, positiveDivider.OutputNum, resultSign);
-            var outputRemainderMultiplexer = new NBitMultiplexer(remainderTwosComplement.OutputNum, positiveDivider.OutputRemainder, numA[0]);
+            var outputMultiplexer = new NBitMultiplexer(positiveDivider.OutputNum, resultTwosComplement.OutputNum, resultSign);
+            var outputRemainderMultiplexer = new NBitMultiplexer(positiveDivider.OutputRemainder, remainderTwosComplement.OutputNum, numA[0]);
 
             this.OutputNum = outputMultiplexer.NBitOutput;
             this.OutputRemainder = outputRemainderMultiplexer.NBitOutput;

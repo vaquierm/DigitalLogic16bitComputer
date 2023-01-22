@@ -22,6 +22,13 @@
   - [ToString()](#M-DigitalLogic16bitComputer-components-Bit-ToString 'DigitalLogic16bitComputer.components.Bit.ToString')
   - [UnregisterUpdate(component)](#M-DigitalLogic16bitComputer-components-Bit-UnregisterUpdate-DigitalLogic16bitComputer-components-IUpdatable- 'DigitalLogic16bitComputer.components.Bit.UnregisterUpdate(DigitalLogic16bitComputer.components.IUpdatable)')
   - [Update()](#M-DigitalLogic16bitComputer-components-Bit-Update 'DigitalLogic16bitComputer.components.Bit.Update')
+- [Buffer](#T-DigitalLogic16bitComputer-components-control-Buffer 'DigitalLogic16bitComputer.components.control.Buffer')
+  - [#ctor(input,output,enable)](#M-DigitalLogic16bitComputer-components-control-Buffer-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.control.Buffer.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
+  - [Enable](#P-DigitalLogic16bitComputer-components-control-Buffer-Enable 'DigitalLogic16bitComputer.components.control.Buffer.Enable')
+  - [Input](#P-DigitalLogic16bitComputer-components-control-Buffer-Input 'DigitalLogic16bitComputer.components.control.Buffer.Input')
+  - [Output](#P-DigitalLogic16bitComputer-components-control-Buffer-Output 'DigitalLogic16bitComputer.components.control.Buffer.Output')
+  - [Dispose()](#M-DigitalLogic16bitComputer-components-control-Buffer-Dispose 'DigitalLogic16bitComputer.components.control.Buffer.Dispose')
+  - [Update()](#M-DigitalLogic16bitComputer-components-control-Buffer-Update 'DigitalLogic16bitComputer.components.control.Buffer.Update')
 - [DFlipFlop](#T-DigitalLogic16bitComputer-components-registers-DFlipFlop 'DigitalLogic16bitComputer.components.registers.DFlipFlop')
   - [#ctor(inputD,inputClk)](#M-DigitalLogic16bitComputer-components-registers-DFlipFlop-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.registers.DFlipFlop.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
   - [Output](#P-DigitalLogic16bitComputer-components-registers-DFlipFlop-Output 'DigitalLogic16bitComputer.components.registers.DFlipFlop.Output')
@@ -34,6 +41,10 @@
   - [OutputCarry](#P-DigitalLogic16bitComputer-components-arithmetic-FullAdder-OutputCarry 'DigitalLogic16bitComputer.components.arithmetic.FullAdder.OutputCarry')
 - [IUpdatable](#T-DigitalLogic16bitComputer-components-IUpdatable 'DigitalLogic16bitComputer.components.IUpdatable')
   - [Update()](#M-DigitalLogic16bitComputer-components-IUpdatable-Update 'DigitalLogic16bitComputer.components.IUpdatable.Update')
+- [Multiplexer](#T-DigitalLogic16bitComputer-components-control-Multiplexer 'DigitalLogic16bitComputer.components.control.Multiplexer')
+  - [#ctor(inputA,inputB,select)](#M-DigitalLogic16bitComputer-components-control-Multiplexer-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.control.Multiplexer.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
+  - [#ctor(inputs,selectBits)](#M-DigitalLogic16bitComputer-components-control-Multiplexer-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.control.Multiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
+  - [Output](#P-DigitalLogic16bitComputer-components-control-Multiplexer-Output 'DigitalLogic16bitComputer.components.control.Multiplexer.Output')
 - [NBitAdder](#T-DigitalLogic16bitComputer-components-arithmetic-NBitAdder 'DigitalLogic16bitComputer.components.arithmetic.NBitAdder')
   - [#ctor(numA,numB,inputCarry)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitAdder-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.NBitAdder.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
   - [OutputCarry](#P-DigitalLogic16bitComputer-components-arithmetic-NBitAdder-OutputCarry 'DigitalLogic16bitComputer.components.arithmetic.NBitAdder.OutputCarry')
@@ -73,10 +84,19 @@
 - [NBitBitwiseXor](#T-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor')
   - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-logic-NBitBitwiseXor-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.logic.NBitBitwiseXor.OutputNum')
+- [NBitBuffer](#T-DigitalLogic16bitComputer-components-control-NBitBuffer 'DigitalLogic16bitComputer.components.control.NBitBuffer')
+  - [#ctor(nBitInput,nBitOutput,enable)](#M-DigitalLogic16bitComputer-components-control-NBitBuffer-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.control.NBitBuffer.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
+  - [Enable](#P-DigitalLogic16bitComputer-components-control-NBitBuffer-Enable 'DigitalLogic16bitComputer.components.control.NBitBuffer.Enable')
+  - [NBitInput](#P-DigitalLogic16bitComputer-components-control-NBitBuffer-NBitInput 'DigitalLogic16bitComputer.components.control.NBitBuffer.NBitInput')
+  - [NBitOutput](#P-DigitalLogic16bitComputer-components-control-NBitBuffer-NBitOutput 'DigitalLogic16bitComputer.components.control.NBitBuffer.NBitOutput')
 - [NBitDivider](#T-DigitalLogic16bitComputer-components-arithmetic-NBitDivider 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider')
   - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitDivider-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-NBitDivider-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider.OutputNum')
   - [OutputRemainder](#P-DigitalLogic16bitComputer-components-arithmetic-NBitDivider-OutputRemainder 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider.OutputRemainder')
+- [NBitMultiplexer](#T-DigitalLogic16bitComputer-components-control-NBitMultiplexer 'DigitalLogic16bitComputer.components.control.NBitMultiplexer')
+  - [#ctor(nBitInputA,nBitInputB,select)](#M-DigitalLogic16bitComputer-components-control-NBitMultiplexer-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.control.NBitMultiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
+  - [#ctor(inputArrays,selectBits)](#M-DigitalLogic16bitComputer-components-control-NBitMultiplexer-#ctor-DigitalLogic16bitComputer-components-NBitArray[],DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.control.NBitMultiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray[],DigitalLogic16bitComputer.components.NBitArray)')
+  - [NBitOutput](#P-DigitalLogic16bitComputer-components-control-NBitMultiplexer-NBitOutput 'DigitalLogic16bitComputer.components.control.NBitMultiplexer.NBitOutput')
 - [NBitMultiplier](#T-DigitalLogic16bitComputer-components-arithmetic-NBitMultiplier 'DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier')
   - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitMultiplier-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
   - [FullOutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-NBitMultiplier-FullOutputNum 'DigitalLogic16bitComputer.components.arithmetic.NBitMultiplier.FullOutputNum')
@@ -94,6 +114,9 @@
   - [AndAll(num,bit)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitPositiveMultiplier-AndAll-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.AndAll(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
   - [ConcatFirst(num,bit)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitPositiveMultiplier-ConcatFirst-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.ConcatFirst(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
   - [RemoveLastBit(num)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitPositiveMultiplier-RemoveLastBit-DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.RemoveLastBit(DigitalLogic16bitComputer.components.NBitArray)')
+- [NBitRightShift](#T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift')
+  - [#ctor(num,shiftN,shiftedOutBitsToShiftedInBitsDelegate)](#M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,System-Func{DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray}- 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray})')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.OutputNum')
 - [NBitTwosComplement](#T-DigitalLogic16bitComputer-components-arithmetic-NBitTwosComplement 'DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement')
   - [#ctor(number)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitTwosComplement-#ctor-DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement.#ctor(DigitalLogic16bitComputer.components.NBitArray)')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-NBitTwosComplement-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement.OutputNum')
@@ -349,6 +372,75 @@ Updates the value of this bit based on its connections
 
 This method has no parameters.
 
+<a name='T-DigitalLogic16bitComputer-components-control-Buffer'></a>
+## Buffer `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.control
+
+##### Summary
+
+Represents a buffer circuit that connects the input to the output when the enable signal is high.
+
+<a name='M-DigitalLogic16bitComputer-components-control-Buffer-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit-'></a>
+### #ctor(input,output,enable) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [Buffer](#T-DigitalLogic16bitComputer-components-control-Buffer 'DigitalLogic16bitComputer.components.control.Buffer') class.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| input | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The input to the buffer circuit. |
+| output | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The output of the buffer circuit. |
+| enable | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The enable signal for the buffer circuit. |
+
+<a name='P-DigitalLogic16bitComputer-components-control-Buffer-Enable'></a>
+### Enable `property`
+
+##### Summary
+
+The enable signal for the buffer circuit.
+
+<a name='P-DigitalLogic16bitComputer-components-control-Buffer-Input'></a>
+### Input `property`
+
+##### Summary
+
+The input to the buffer circuit.
+
+<a name='P-DigitalLogic16bitComputer-components-control-Buffer-Output'></a>
+### Output `property`
+
+##### Summary
+
+The output of the buffer circuit.
+
+<a name='M-DigitalLogic16bitComputer-components-control-Buffer-Dispose'></a>
+### Dispose() `method`
+
+##### Summary
+
+Disposes of the buffer circuit by unregistering the update method from the enable signal.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-DigitalLogic16bitComputer-components-control-Buffer-Update'></a>
+### Update() `method`
+
+##### Summary
+
+Updates the buffer circuit based on the current state of the enable signal.
+
+##### Parameters
+
+This method has no parameters.
+
 <a name='T-DigitalLogic16bitComputer-components-registers-DFlipFlop'></a>
 ## DFlipFlop `type`
 
@@ -465,6 +557,59 @@ Update the component's state
 ##### Parameters
 
 This method has no parameters.
+
+<a name='T-DigitalLogic16bitComputer-components-control-Multiplexer'></a>
+## Multiplexer `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.control
+
+##### Summary
+
+A Multiplexer (MUX) is a combinational logic circuit that selects one of several inputs and forwards it to the output.
+
+<a name='M-DigitalLogic16bitComputer-components-control-Multiplexer-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit-'></a>
+### #ctor(inputA,inputB,select) `constructor`
+
+##### Summary
+
+Creates a new 2:1 multiplexer with the specified inputs and select bit.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inputA | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The first input bit |
+| inputB | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The second input bit |
+| select | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The select bit |
+
+<a name='M-DigitalLogic16bitComputer-components-control-Multiplexer-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(inputs,selectBits) `constructor`
+
+##### Summary
+
+Creates a new N:1 multiplexer with the specified inputs and select bits.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inputs | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The input bits |
+| selectBits | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The select bits |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | If the number of inputs is not a power of 2 or if the number of select bits is not equal to log2(inputs.Length) |
+
+<a name='P-DigitalLogic16bitComputer-components-control-Multiplexer-Output'></a>
+### Output `property`
+
+##### Summary
+
+The output of the multiplexer.
 
 <a name='T-DigitalLogic16bitComputer-components-arithmetic-NBitAdder'></a>
 ## NBitAdder `type`
@@ -888,6 +1033,59 @@ Initializes a new instance of the [NBitBitwiseXor](#T-DigitalLogic16bitComputer-
 
 The output of the bitwise XOR operation.
 
+<a name='T-DigitalLogic16bitComputer-components-control-NBitBuffer'></a>
+## NBitBuffer `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.control
+
+##### Summary
+
+Represents a N-bit buffer circuit that connects or disconnects a N-bit input to a N-bit output based on the value of the enable bit.
+
+<a name='M-DigitalLogic16bitComputer-components-control-NBitBuffer-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit-'></a>
+### #ctor(nBitInput,nBitOutput,enable) `constructor`
+
+##### Summary
+
+Creates a N-bit buffer circuit that connects or disconnects a N-bit input to a N-bit output based on the value of the enable bit.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| nBitInput | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The N-bit input of the buffer circuit. |
+| nBitOutput | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The N-bit output of the buffer circuit. |
+| enable | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The enable bit that controls whether the input is connected to the output or not. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Input and Output must have the same length |
+
+<a name='P-DigitalLogic16bitComputer-components-control-NBitBuffer-Enable'></a>
+### Enable `property`
+
+##### Summary
+
+The enable bit that controls whether the input is connected to the output or not.
+
+<a name='P-DigitalLogic16bitComputer-components-control-NBitBuffer-NBitInput'></a>
+### NBitInput `property`
+
+##### Summary
+
+The N-bit input of the buffer circuit.
+
+<a name='P-DigitalLogic16bitComputer-components-control-NBitBuffer-NBitOutput'></a>
+### NBitOutput `property`
+
+##### Summary
+
+The N-bit output of the buffer circuit.
+
 <a name='T-DigitalLogic16bitComputer-components-arithmetic-NBitDivider'></a>
 ## NBitDivider `type`
 
@@ -944,6 +1142,59 @@ The result of the devision.
 ##### Summary
 
 The remainder of the division.
+
+<a name='T-DigitalLogic16bitComputer-components-control-NBitMultiplexer'></a>
+## NBitMultiplexer `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.control
+
+##### Summary
+
+Represents a multiplexer that selects one of multiple N-bit inputs based on a selection bit or N-bit select signal.
+
+<a name='M-DigitalLogic16bitComputer-components-control-NBitMultiplexer-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit-'></a>
+### #ctor(nBitInputA,nBitInputB,select) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitMultiplexer](#T-DigitalLogic16bitComputer-components-control-NBitMultiplexer 'DigitalLogic16bitComputer.components.control.NBitMultiplexer') class that selects between two N-bit inputs based on a selection bit.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| nBitInputA | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The first N-bit input to be selected. |
+| nBitInputB | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The second N-bit input to be selected. |
+| select | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The selection bit, where a value of 1 selects `nBitInputA` and a value of 0 selects `nBitInputB`. |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | Inputs must have the same length |
+
+<a name='M-DigitalLogic16bitComputer-components-control-NBitMultiplexer-#ctor-DigitalLogic16bitComputer-components-NBitArray[],DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(inputArrays,selectBits) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitMultiplexer](#T-DigitalLogic16bitComputer-components-control-NBitMultiplexer 'DigitalLogic16bitComputer.components.control.NBitMultiplexer') class that selects between multiple N-bit inputs based on an N-bit select signal.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inputArrays | [DigitalLogic16bitComputer.components.NBitArray[]](#T-DigitalLogic16bitComputer-components-NBitArray[] 'DigitalLogic16bitComputer.components.NBitArray[]') | The array of N-bit inputs to be selected from. |
+| selectBits | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The N-bit selection |
+
+<a name='P-DigitalLogic16bitComputer-components-control-NBitMultiplexer-NBitOutput'></a>
+### NBitOutput `property`
+
+##### Summary
+
+The output of the multiplexer, an N-bit array.
 
 <a name='T-DigitalLogic16bitComputer-components-arithmetic-NBitMultiplier'></a>
 ## NBitMultiplier `type`
@@ -1154,6 +1405,45 @@ The NBitArray with the last bit removed
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | num | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The NBitArray to remove the last bit from |
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift'></a>
+## NBitRightShift `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.shift
+
+##### Summary
+
+Represents a N-bit right shift circuit for positive integers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,System-Func{DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray}-'></a>
+### #ctor(num,shiftN,shiftedOutBitsToShiftedInBitsDelegate) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitRightShift](#T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift') class.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| num | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The number to shift |
+| shiftN | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The number of bits to shift by |
+| shiftedOutBitsToShiftedInBitsDelegate | [System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray}') | A delegate that converts the shifted out bits to the shifted in bits |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The input num must have a number of bits that is a power of 2 |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The output number after the right shift operation.
 
 <a name='T-DigitalLogic16bitComputer-components-arithmetic-NBitTwosComplement'></a>
 ## NBitTwosComplement `type`

@@ -14,11 +14,36 @@ namespace DigitalLogic16bitComputerTest.components.control
             var selectBit = new Bit(false);
             var nBitMultiplexer = new NBitMultiplexer(nBitInputA, nBitInputB, selectBit);
 
-            Assert.That(nBitMultiplexer.NBitOutput.Select(bit => bit.Value).ToArray(), Is.EqualTo(inputB));
+            Assert.That(nBitMultiplexer.NBitOutput.Select(bit => bit.Value).ToArray(), Is.EqualTo(inputA));
 
             selectBit.Value = true;
 
-            Assert.That(nBitMultiplexer.NBitOutput.Select(bit => bit.Value).ToArray(), Is.EqualTo(inputA));
+            Assert.That(nBitMultiplexer.NBitOutput.Select(bit => bit.Value).ToArray(), Is.EqualTo(inputB));
+        }
+
+        [Test]
+        public void NTo1MultiplexerTest()
+        {
+            var inputs = new string[] { "1111", "0101", "0000", "1010" };
+            var selectBitsArray = new Bit[(int)Math.Log2(inputs.Length)];
+            for (int i = 0; i < selectBitsArray.Length; i++)
+            {
+                selectBitsArray[i] = new Bit();
+            }
+            var inputBits = inputs.Select(input => NBitArray.BinaryStringToNBitArray(input)).ToArray();
+            var selectBits = new NBitArray(selectBitsArray);
+
+            var multiplexer = new NBitMultiplexer(inputBits, selectBits);
+
+            for (var i = 0; i < inputBits.Length; i++)
+            {
+                var desiredInputBits = NBitArray.IntToNBitArray(i, selectBits.Length + 1);
+                for (var j = 1; j < desiredInputBits.Length; j++)
+                {
+                    selectBits[j - 1].Value = desiredInputBits[j].Value;
+                }
+                Assert.That(multiplexer.NBitOutput.ToBinaryString(), Is.EqualTo(inputBits[i].ToBinaryString()));
+            }
         }
 
         [Test]

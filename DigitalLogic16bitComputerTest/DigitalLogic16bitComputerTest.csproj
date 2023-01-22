@@ -23,9 +23,11 @@
   <ItemGroup>
     <Folder Include="util\" />
     <Folder Include="components\arithmetic\logic\" />
+    <Folder Include="components\arithmetic\shift\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="components\arithmetic\logic\" />
+    <None Remove="components\arithmetic\shift\" />
   </ItemGroup>
 </Project>

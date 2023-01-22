@@ -52,7 +52,7 @@ namespace DigitalLogic16bitComputer.components.arithmetic
                 outptNumBitArray[i] = outputBitAnd.Output;
 
                 // If the output bit is true, the new remainder will be the result of the subtraction, if not, the remainder remains unchanged
-                var newRemainderMux = new NBitMultiplexer(subtractDividend.OutputNum.SubArray(1, remainder.Length), remainder, outputBitAnd.Output);
+                var newRemainderMux = new NBitMultiplexer(remainder, subtractDividend.OutputNum.SubArray(1, remainder.Length), outputBitAnd.Output);
 
                 // Update the new remainder
                 remainder = newRemainderMux.NBitOutput;
