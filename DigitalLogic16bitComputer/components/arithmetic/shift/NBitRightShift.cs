@@ -19,7 +19,7 @@ namespace DigitalLogic16bitComputer.components.arithmetic.shift
 		/// <param name="shiftN">The number of bits to shift by</param>
 		/// <param name="shiftedOutBitsToShiftedInBitsDelegate">A delegate that converts the shifted out bits to the shifted in bits</param>
 		/// <exception cref="ArgumentException">The input num must have a number of bits that is a power of 2</exception>
-		public NBitRightShift(NBitArray num, NBitArray shiftN, Func<NBitArray, NBitArray> shiftedOutBitsToShiftedInBitsDelegate)
+		public NBitRightShift(NBitArray num, NBitArray shiftN, Func<NBitArray, Bit, NBitArray> shiftedOutBitsToShiftedInBitsDelegate)
 		{
 			var lengthLog2 = Math.Log2(shiftN.Length);
 
@@ -36,7 +36,7 @@ namespace DigitalLogic16bitComputer.components.arithmetic.shift
 				var shiftedOutBits = num.SubArray(num.Length - i, num.Length - 1);
 				var shiftedBits = num.SubArray(0, num.Length - 1 - i);
 				var shiftedResult = shiftedBits;
-				var shiftedInBits = shiftedOutBitsToShiftedInBitsDelegate(shiftedOutBits);
+				var shiftedInBits = shiftedOutBitsToShiftedInBitsDelegate(shiftedOutBits, num[0]);
 				for (var j = shiftedInBits.Length - 1; j >= 0; j--)
 				{
 					shiftedResult = shiftedResult.Prepend(shiftedInBits[j]);

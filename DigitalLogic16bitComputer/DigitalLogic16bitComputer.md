@@ -93,6 +93,9 @@
   - [#ctor(numA,numB)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitDivider-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-NBitDivider-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider.OutputNum')
   - [OutputRemainder](#P-DigitalLogic16bitComputer-components-arithmetic-NBitDivider-OutputRemainder 'DigitalLogic16bitComputer.components.arithmetic.NBitDivider.OutputRemainder')
+- [NBitLeftShift](#T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitLeftShift 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitLeftShift')
+  - [#ctor(num,shiftN)](#M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitLeftShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitLeftShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-shift-NBitLeftShift-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitLeftShift.OutputNum')
 - [NBitMultiplexer](#T-DigitalLogic16bitComputer-components-control-NBitMultiplexer 'DigitalLogic16bitComputer.components.control.NBitMultiplexer')
   - [#ctor(nBitInputA,nBitInputB,select)](#M-DigitalLogic16bitComputer-components-control-NBitMultiplexer-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.control.NBitMultiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
   - [#ctor(inputArrays,selectBits)](#M-DigitalLogic16bitComputer-components-control-NBitMultiplexer-#ctor-DigitalLogic16bitComputer-components-NBitArray[],DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.control.NBitMultiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray[],DigitalLogic16bitComputer.components.NBitArray)')
@@ -115,8 +118,11 @@
   - [ConcatFirst(num,bit)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitPositiveMultiplier-ConcatFirst-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.ConcatFirst(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
   - [RemoveLastBit(num)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitPositiveMultiplier-RemoveLastBit-DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.RemoveLastBit(DigitalLogic16bitComputer.components.NBitArray)')
 - [NBitRightShift](#T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift')
-  - [#ctor(num,shiftN,shiftedOutBitsToShiftedInBitsDelegate)](#M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,System-Func{DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray}- 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray})')
+  - [#ctor(num,shiftN,shiftedOutBitsToShiftedInBitsDelegate)](#M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,System-Func{DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-NBitArray}- 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.NBitArray})')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.OutputNum')
+- [NBitShift](#T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitShift 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitShift')
+  - [#ctor(num,shiftN,opSelect1,opSelect2)](#M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-shift-NBitShift-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitShift.OutputNum')
 - [NBitTwosComplement](#T-DigitalLogic16bitComputer-components-arithmetic-NBitTwosComplement 'DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement')
   - [#ctor(number)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitTwosComplement-#ctor-DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement.#ctor(DigitalLogic16bitComputer.components.NBitArray)')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-NBitTwosComplement-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.NBitTwosComplement.OutputNum')
@@ -1143,6 +1149,44 @@ The result of the devision.
 
 The remainder of the division.
 
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitLeftShift'></a>
+## NBitLeftShift `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.shift
+
+##### Summary
+
+Represents a N-bit left shift circuit for positive integers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitLeftShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray-'></a>
+### #ctor(num,shiftN) `constructor`
+
+##### Summary
+
+Constructs a new N-bit left shift circuit for positive integers.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| num | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The input number to be shifted |
+| shiftN | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The number of bits to shift |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The input num must have a number of bits that is a power of 2 |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-shift-NBitLeftShift-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The output of the left shift operation
+
 <a name='T-DigitalLogic16bitComputer-components-control-NBitMultiplexer'></a>
 ## NBitMultiplexer `type`
 
@@ -1417,7 +1461,7 @@ DigitalLogic16bitComputer.components.arithmetic.shift
 
 Represents a N-bit right shift circuit for positive integers.
 
-<a name='M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,System-Func{DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray}-'></a>
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,System-Func{DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-NBitArray}-'></a>
 ### #ctor(num,shiftN,shiftedOutBitsToShiftedInBitsDelegate) `constructor`
 
 ##### Summary
@@ -1430,7 +1474,7 @@ Initializes a new instance of the [NBitRightShift](#T-DigitalLogic16bitComputer-
 | ---- | ---- | ----------- |
 | num | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The number to shift |
 | shiftN | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The number of bits to shift by |
-| shiftedOutBitsToShiftedInBitsDelegate | [System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray}') | A delegate that converts the shifted out bits to the shifted in bits |
+| shiftedOutBitsToShiftedInBitsDelegate | [System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.NBitArray}](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.Func 'System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.NBitArray}') | A delegate that converts the shifted out bits to the shifted in bits |
 
 ##### Exceptions
 
@@ -1444,6 +1488,51 @@ Initializes a new instance of the [NBitRightShift](#T-DigitalLogic16bitComputer-
 ##### Summary
 
 The output number after the right shift operation.
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitShift'></a>
+## NBitShift `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic.shift
+
+##### Summary
+
+Represents a N-bit shift circuit that can perform left shift, right shift, rotate right, and arithmetic shift right operations.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit-'></a>
+### #ctor(num,shiftN,opSelect1,opSelect2) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitShift](#T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitShift 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitShift') class.
+opSelect1, opSelect2 => OP
+false, false => LSL
+false, true => LSR
+true, false => ROR
+true, true => ASR
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| num | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The number to be shifted |
+| shiftN | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The number of bits to shift the input by |
+| opSelect1 | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The first select bit for the operation |
+| opSelect2 | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The second select bit for the operation |
+
+##### Exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| [System.ArgumentException](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.ArgumentException 'System.ArgumentException') | The input num must have a number of bits that is a power of 2 |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-shift-NBitShift-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The output of the shift operation
 
 <a name='T-DigitalLogic16bitComputer-components-arithmetic-NBitTwosComplement'></a>
 ## NBitTwosComplement `type`

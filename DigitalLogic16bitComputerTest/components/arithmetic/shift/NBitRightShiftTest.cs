@@ -12,7 +12,7 @@ namespace DigitalLogic16bitComputerTest.components.arithmetic.shift
 
 			var shiftAmount = NBitArray.IntToNBitArray(0, numToShift.Length);
 
-			var shiftedOutBitsToShiftedInBitsDelegate = delegate (NBitArray shiftedOutBits) { return shiftedOutBits; };
+			var shiftedOutBitsToShiftedInBitsDelegate = delegate (NBitArray shiftedOutBits, Bit msb) { return shiftedOutBits; };
             var nBitShift = new NBitRightShift(numToShiftArray, shiftAmount, shiftedOutBitsToShiftedInBitsDelegate);
 
 			for (var i = 0; i < numToShiftArray.Length * 2; i++)

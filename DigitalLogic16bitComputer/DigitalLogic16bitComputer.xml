@@ -340,6 +340,24 @@
             <param name="number">The input number to convert to two's complement</param>
             <exception cref="T:System.ArgumentException">Thrown when the number of bits in the input number is less than 2</exception>
         </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.shift.NBitLeftShift">
+            <summary>
+            Represents a N-bit left shift circuit for positive integers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.shift.NBitLeftShift.OutputNum">
+            <summary>
+            The output of the left shift operation
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.shift.NBitLeftShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray)">
+            <summary>
+            Constructs a new N-bit left shift circuit for positive integers.
+            </summary>
+            <param name="num">The input number to be shifted</param>
+            <param name="shiftN">The number of bits to shift</param>
+            <exception cref="T:System.ArgumentException">The input num must have a number of bits that is a power of 2</exception>
+        </member>
         <member name="T:DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift">
             <summary>
             Represents a N-bit right shift circuit for positive integers.
@@ -350,13 +368,38 @@
             The output number after the right shift operation.
             </summary>
         </member>
-        <member name="M:DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray})">
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.NBitArray})">
             <summary>
             Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift"/> class.
             </summary>
             <param name="num">The number to shift</param>
             <param name="shiftN">The number of bits to shift by</param>
             <param name="shiftedOutBitsToShiftedInBitsDelegate">A delegate that converts the shifted out bits to the shifted in bits</param>
+            <exception cref="T:System.ArgumentException">The input num must have a number of bits that is a power of 2</exception>
+        </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.shift.NBitShift">
+            <summary>
+            Represents a N-bit shift circuit that can perform left shift, right shift, rotate right, and arithmetic shift right operations.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.shift.NBitShift.OutputNum">
+            <summary>
+            The output of the shift operation
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.shift.NBitShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.arithmetic.shift.NBitShift"/> class.
+            opSelect1, opSelect2 => OP
+            false, false => LSL
+            false, true => LSR
+            true, false => ROR
+            true, true => ASR
+            </summary>
+            <param name="num">The number to be shifted</param>
+            <param name="shiftN">The number of bits to shift the input by</param>
+            <param name="opSelect1">The first select bit for the operation</param>
+            <param name="opSelect2">The second select bit for the operation</param>
             <exception cref="T:System.ArgumentException">The input num must have a number of bits that is a power of 2</exception>
         </member>
         <member name="T:DigitalLogic16bitComputer.components.Bit">
