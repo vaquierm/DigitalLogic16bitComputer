@@ -117,6 +117,10 @@
   - [AndAll(num,bit)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitPositiveMultiplier-AndAll-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.AndAll(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
   - [ConcatFirst(num,bit)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitPositiveMultiplier-ConcatFirst-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.ConcatFirst(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
   - [RemoveLastBit(num)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitPositiveMultiplier-RemoveLastBit-DigitalLogic16bitComputer-components-NBitArray- 'DigitalLogic16bitComputer.components.arithmetic.NBitPositiveMultiplier.RemoveLastBit(DigitalLogic16bitComputer.components.NBitArray)')
+- [NBitRegister](#T-DigitalLogic16bitComputer-components-registers-NBitRegister 'DigitalLogic16bitComputer.components.registers.NBitRegister')
+  - [#ctor(input,clk,enable)](#M-DigitalLogic16bitComputer-components-registers-NBitRegister-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.registers.NBitRegister.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
+  - [Input](#P-DigitalLogic16bitComputer-components-registers-NBitRegister-Input 'DigitalLogic16bitComputer.components.registers.NBitRegister.Input')
+  - [Output](#P-DigitalLogic16bitComputer-components-registers-NBitRegister-Output 'DigitalLogic16bitComputer.components.registers.NBitRegister.Output')
 - [NBitRightShift](#T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift')
   - [#ctor(num,shiftN,shiftedOutBitsToShiftedInBitsDelegate)](#M-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,System-Func{DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-NBitArray}- 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,System.Func{DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.NBitArray})')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.shift.NBitRightShift.OutputNum')
@@ -1449,6 +1453,46 @@ The NBitArray with the last bit removed
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | num | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The NBitArray to remove the last bit from |
+
+<a name='T-DigitalLogic16bitComputer-components-registers-NBitRegister'></a>
+## NBitRegister `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.registers
+
+##### Summary
+
+A class that represents a register that stores an N-bit number.
+
+<a name='M-DigitalLogic16bitComputer-components-registers-NBitRegister-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit-'></a>
+### #ctor(input,clk,enable) `constructor`
+
+##### Summary
+
+Initializes a new instance of the [NBitRegister](#T-DigitalLogic16bitComputer-components-registers-NBitRegister 'DigitalLogic16bitComputer.components.registers.NBitRegister') class.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| input | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The input N-bit number for the register. |
+| clk | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The clock input for the register. |
+| enable | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The enable input for the register. |
+
+<a name='P-DigitalLogic16bitComputer-components-registers-NBitRegister-Input'></a>
+### Input `property`
+
+##### Summary
+
+The input N-bit number for the register.
+
+<a name='P-DigitalLogic16bitComputer-components-registers-NBitRegister-Output'></a>
+### Output `property`
+
+##### Summary
+
+The output N-bit number for the register.
 
 <a name='T-DigitalLogic16bitComputer-components-arithmetic-shift-NBitRightShift'></a>
 ## NBitRightShift `type`

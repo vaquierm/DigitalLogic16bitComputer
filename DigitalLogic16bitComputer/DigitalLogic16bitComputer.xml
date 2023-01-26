@@ -866,6 +866,29 @@
             <param name="inputD">The input to set or reset the stored state</param>
             <param name="inputClk">The input to control when to set or reset the stored state</param>
         </member>
+        <member name="T:DigitalLogic16bitComputer.components.registers.NBitRegister">
+            <summary>
+            A class that represents a register that stores an N-bit number.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.NBitRegister.Input">
+            <summary>
+            The input N-bit number for the register.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.registers.NBitRegister.Output">
+            <summary>
+            The output N-bit number for the register.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.registers.NBitRegister.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalLogic16bitComputer.components.registers.NBitRegister"/> class.
+            </summary>
+            <param name="input">The input N-bit number for the register.</param>
+            <param name="clk">The clock input for the register.</param>
+            <param name="enable">The enable input for the register.</param>
+        </member>
         <member name="T:DigitalLogic16bitComputer.components.registers.Register">
             <summary>
             A class that represents a register that stores a single bit.
