@@ -13,13 +13,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="util\" />
-    <Folder Include="module\" />
     <Folder Include="components\arithmetic\shift\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Vsxmd" />
-    <None Remove="module\" />
     <None Remove="components\arithmetic\shift\" />
   </ItemGroup>
   <ItemGroup>

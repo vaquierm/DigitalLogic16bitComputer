@@ -197,6 +197,43 @@
             <param name="numB">The second N-bit number to be added or subtracted.</param>
             <param name="subtract">A bit that determines whether the operation is addition or subtraction.</param>
         </member>
+        <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitArithmetic">
+            <summary>
+            The N-bit Arithmetic class performs various arithmetic and logic operations on two N-bit numbers.
+            </summary>
+        </member>
+        <member name="P:DigitalLogic16bitComputer.components.arithmetic.NBitArithmetic.OutputNum">
+            <summary>
+            The N-bit output of the circuit.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.arithmetic.NBitArithmetic.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            The constructor of the NBitArithmetic class.
+            1: ADD
+            2: SUB
+            3: DIV
+            4: MOD
+            5: MUL
+            6: NOT
+            7: AND
+            8: ORR
+            9: XOR
+            10: ORN
+            11: BIC
+            12: RSB (NEG)
+            13: LSL
+            14: LSR
+            15: ASR
+            16: ROR
+            </summary>
+            <param name="inputA">The first operand of the operation as an NBitArray.</param>
+            <param name="inputB">The second operand of the operation as an NBitArray.</param>
+            <param name="opSelect1">The first control bit that determines the operation to be performed.</param>
+            <param name="opSelect2">The second control bit that determines the operation to be performed.</param>
+            <param name="opSelect3">The third control bit that determines the operation to be performed.</param>
+            <param name="opSelect4">The fourth control bit that determines the operation to be performed.</param>
+        </member>
         <member name="T:DigitalLogic16bitComputer.components.arithmetic.NBitDivider">
             <summary>
             Division module for two N-bit integers.
@@ -495,6 +532,25 @@
             Disposes of the buffer circuit by unregistering the update method from the enable signal.
             </summary>
         </member>
+        <member name="T:DigitalLogic16bitComputer.components.control.Demultiplexer">
+            <summary>
+            The Demultiplexer class is a digital logic gate that selects one of multiple outputs from a single input.
+            </summary>
+        </member>
+        <member name="F:DigitalLogic16bitComputer.components.control.Demultiplexer.Outputs">
+            <summary>
+            The Outputs attribute holds the selected output.
+            </summary>
+        </member>
+        <member name="M:DigitalLogic16bitComputer.components.control.Demultiplexer.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)">
+            <summary>
+            The constructor for the Demultiplexer class takes in two inputs: a single input bit and an enable bit.
+            The output will have two bits. If the input bit is false, the first bit will be true, if the input is true, the seccond bit will be true.
+            </summary>
+            <param name="input">The single input bit</param>
+            <param name="enable">The enable bit</param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DigitalLogic16bitComputer.components.control.Demultiplexer.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)" -->
         <member name="T:DigitalLogic16bitComputer.components.control.Multiplexer">
             <summary>
             A Multiplexer (MUX) is a combinational logic circuit that selects one of several inputs and forwards it to the output.

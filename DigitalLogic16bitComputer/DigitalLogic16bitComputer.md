@@ -32,6 +32,9 @@
 - [DFlipFlop](#T-DigitalLogic16bitComputer-components-registers-DFlipFlop 'DigitalLogic16bitComputer.components.registers.DFlipFlop')
   - [#ctor(inputD,inputClk)](#M-DigitalLogic16bitComputer-components-registers-DFlipFlop-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.registers.DFlipFlop.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
   - [Output](#P-DigitalLogic16bitComputer-components-registers-DFlipFlop-Output 'DigitalLogic16bitComputer.components.registers.DFlipFlop.Output')
+- [Demultiplexer](#T-DigitalLogic16bitComputer-components-control-Demultiplexer 'DigitalLogic16bitComputer.components.control.Demultiplexer')
+  - [#ctor(input,enable)](#M-DigitalLogic16bitComputer-components-control-Demultiplexer-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.control.Demultiplexer.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
+  - [Outputs](#F-DigitalLogic16bitComputer-components-control-Demultiplexer-Outputs 'DigitalLogic16bitComputer.components.control.Demultiplexer.Outputs')
 - [FullAdder](#T-DigitalLogic16bitComputer-components-arithmetic-FullAdder 'DigitalLogic16bitComputer.components.arithmetic.FullAdder')
   - [#ctor(inputA,inputB,inputCarry)](#M-DigitalLogic16bitComputer-components-arithmetic-FullAdder-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.FullAdder.#ctor(DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
   - [InputA](#P-DigitalLogic16bitComputer-components-arithmetic-FullAdder-InputA 'DigitalLogic16bitComputer.components.arithmetic.FullAdder.InputA')
@@ -54,6 +57,9 @@
   - [#ctor(numA,numB,subtract)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitAdderSubtractor-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.NBitAdderSubtractor.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit)')
   - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-NBitAdderSubtractor-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.NBitAdderSubtractor.OutputNum')
   - [Subtract](#P-DigitalLogic16bitComputer-components-arithmetic-NBitAdderSubtractor-Subtract 'DigitalLogic16bitComputer.components.arithmetic.NBitAdderSubtractor.Subtract')
+- [NBitArithmetic](#T-DigitalLogic16bitComputer-components-arithmetic-NBitArithmetic 'DigitalLogic16bitComputer.components.arithmetic.NBitArithmetic')
+  - [#ctor(inputA,inputB,opSelect1,opSelect2,opSelect3,opSelect4)](#M-DigitalLogic16bitComputer-components-arithmetic-NBitArithmetic-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit- 'DigitalLogic16bitComputer.components.arithmetic.NBitArithmetic.#ctor(DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.NBitArray,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit,DigitalLogic16bitComputer.components.Bit)')
+  - [OutputNum](#P-DigitalLogic16bitComputer-components-arithmetic-NBitArithmetic-OutputNum 'DigitalLogic16bitComputer.components.arithmetic.NBitArithmetic.OutputNum')
 - [NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray')
   - [#ctor(bitArray)](#M-DigitalLogic16bitComputer-components-NBitArray-#ctor-DigitalLogic16bitComputer-components-Bit[]- 'DigitalLogic16bitComputer.components.NBitArray.#ctor(DigitalLogic16bitComputer.components.Bit[])')
   - [Item](#P-DigitalLogic16bitComputer-components-NBitArray-Item-System-Int32- 'DigitalLogic16bitComputer.components.NBitArray.Item(System.Int32)')
@@ -484,6 +490,39 @@ Constructs a D Flip-Flop with input D and input Clock
 
 The output of the D Flip-Flop. This is the stored state.
 
+<a name='T-DigitalLogic16bitComputer-components-control-Demultiplexer'></a>
+## Demultiplexer `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.control
+
+##### Summary
+
+The Demultiplexer class is a digital logic gate that selects one of multiple outputs from a single input.
+
+<a name='M-DigitalLogic16bitComputer-components-control-Demultiplexer-#ctor-DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit-'></a>
+### #ctor(input,enable) `constructor`
+
+##### Summary
+
+The constructor for the Demultiplexer class takes in two inputs: a single input bit and an enable bit.
+The output will have two bits. If the input bit is false, the first bit will be true, if the input is true, the seccond bit will be true.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| input | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The single input bit |
+| enable | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The enable bit |
+
+<a name='F-DigitalLogic16bitComputer-components-control-Demultiplexer-Outputs'></a>
+### Outputs `constants`
+
+##### Summary
+
+The Outputs attribute holds the selected output.
+
 <a name='T-DigitalLogic16bitComputer-components-arithmetic-FullAdder'></a>
 ## FullAdder `type`
 
@@ -705,6 +744,58 @@ The N-bit output of the circuit.
 ##### Summary
 
 Indicates whether the circuit is in subtraction mode.
+
+<a name='T-DigitalLogic16bitComputer-components-arithmetic-NBitArithmetic'></a>
+## NBitArithmetic `type`
+
+##### Namespace
+
+DigitalLogic16bitComputer.components.arithmetic
+
+##### Summary
+
+The N-bit Arithmetic class performs various arithmetic and logic operations on two N-bit numbers.
+
+<a name='M-DigitalLogic16bitComputer-components-arithmetic-NBitArithmetic-#ctor-DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-NBitArray,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit,DigitalLogic16bitComputer-components-Bit-'></a>
+### #ctor(inputA,inputB,opSelect1,opSelect2,opSelect3,opSelect4) `constructor`
+
+##### Summary
+
+The constructor of the NBitArithmetic class.
+1: ADD
+2: SUB
+3: DIV
+4: MOD
+5: MUL
+6: NOT
+7: AND
+8: ORR
+9: XOR
+10: ORN
+11: BIC
+12: RSB (NEG)
+13: LSL
+14: LSR
+15: ASR
+16: ROR
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| inputA | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The first operand of the operation as an NBitArray. |
+| inputB | [DigitalLogic16bitComputer.components.NBitArray](#T-DigitalLogic16bitComputer-components-NBitArray 'DigitalLogic16bitComputer.components.NBitArray') | The second operand of the operation as an NBitArray. |
+| opSelect1 | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The first control bit that determines the operation to be performed. |
+| opSelect2 | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The second control bit that determines the operation to be performed. |
+| opSelect3 | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The third control bit that determines the operation to be performed. |
+| opSelect4 | [DigitalLogic16bitComputer.components.Bit](#T-DigitalLogic16bitComputer-components-Bit 'DigitalLogic16bitComputer.components.Bit') | The fourth control bit that determines the operation to be performed. |
+
+<a name='P-DigitalLogic16bitComputer-components-arithmetic-NBitArithmetic-OutputNum'></a>
+### OutputNum `property`
+
+##### Summary
+
+The N-bit output of the circuit.
 
 <a name='T-DigitalLogic16bitComputer-components-NBitArray'></a>
 ## NBitArray `type`
